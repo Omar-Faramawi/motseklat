@@ -5,35 +5,29 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['required'] = 'حقل %s إجباري.';
-$lang['isset'] = 'حقل %s يجب أن يحتوى على قيمة.';
-$lang['valid_email'] = 'حقل %s يجب أن يحتوى عنوان بريد إلكتروني صحيح.';
-$lang['valid_emails'] = 'حقل %s يجب أن يحتوى على عناوين بريد إلكتروني صحيحة.';
-$lang['valid_url'] = 'حقل %s يجب أن يحتوى على رابط.';
-$lang['valid_ip'] = 'حقل %s يجب أن يحتوى على عنوان أي بي.';
-$lang['min_length'] = 'حقل %s يجب أن لا يقل عن %s حرف.';
-$lang['max_length'] = 'حقل %s يجب أن لا يتجاوز أكثر من %s حرف.';
-$lang['exact_length'] = 'حقل %s يجب أن يكون بطول %s حرف.';
-$lang['alpha'] = 'حقل %s يمكن أن يحتوى على أحرف فقط.';
-$lang['alpha_numeric'] = 'حقل %s يمكن أن يحتوى على أحرف وأرقام فقط.';
-$lang['alpha_numeric_spaces'] = 'حقل %s يمكن أن يحتوى على أحرف وأرقام و فراغات فقط.';
-$lang['alpha_dash'] = 'حقل %s يمكن أن يحتوى على أحرف وأرقام أو شرطة أو شرطة سفلية.';
-$lang['numeric'] = 'حقل %s يجب أن يحتوى على أرقام فقط.';
-$lang['is_numeric'] = 'حقل %s يجب أن يحتوى على أرقام فقط.';
-$lang['integer'] = 'حقل %s يجب أن يحتوى على رقم صحيح فقط.';
-$lang['regex_match'] = 'حقل %s لا يحتوى على قيمة بشكل صحيح.';
-$lang['matches'] = 'حقل %s لا يساوي حقل %s.';
-$lang['differs'] = 'حقل %s يجب أن يكون مختلف عن حقل %s.';
-$lang['is_unique'] = 'حقل %s يجب أن يحتوى على قيمة غير متكررة.';
-$lang['is_natural'] = 'حقل %s يجب أن يحتوى على رقم.';
-$lang['is_natural_no_zero'] = 'حقل %s يجب أن يحتوى على رقم أكبر من صفر.';
-$lang['decimal'] = 'حقل %s يجب أن يحتوى على رقم عشري.';
-$lang['less_than'] = 'حقل %s يجب أن يحتوى على رقم أقل من %s.';
-$lang['less_than_equal_to'] = 'حقل %s يجب أن يحتوى على رقم أقل أو يساوي %s.';
-$lang['greater_than'] = 'حقل %s يجب أن يحتوى على رقم أكبر من %s.';
-$lang['greater_than_equal_to'] = 'حقل %s يجب أن يحتوى على رقم أكبر من أو يساوي %s.';
-$lang['error_message_not_set'] = ' حقل%s  غير قادر على الوصول إلى رسالة خطأ المقابلة ل اسم مجال عملك.';
-$lang['in_list'] = 'The %s field must be one of: %s.'; //FIXME
+$lang['required']			= "The %s field is required.";
+$lang['isset']				= "The %s field must have a value.";
+$lang['valid_email']		= "The %s field must contain a valid email address.";
+$lang['valid_emails']		= "The %s field must contain all valid email addresses.";
+$lang['valid_url']			= "The %s field must contain a valid URL.";
+$lang['valid_ip']			= "The %s field must contain a valid IP.";
+$lang['min_length']			= "The %s field must be at least %s characters in length.";
+$lang['max_length']			= "The %s field can not exceed %s characters in length.";
+$lang['exact_length']		= "The %s field must be exactly %s characters in length.";
+$lang['alpha']				= "The %s field may only contain alphabetical characters.";
+$lang['alpha_numeric']		= "The %s field may only contain alpha-numeric characters.";
+$lang['alpha_dash']			= "The %s field may only contain alpha-numeric characters, underscores, and dashes.";
+$lang['numeric']			= "The %s field must contain only numbers.";
+$lang['is_numeric']			= "The %s field must contain only numeric characters.";
+$lang['integer']			= "The %s field must contain an integer.";
+$lang['regex_match']		= "The %s field is not in the correct format.";
+$lang['matches']			= "The %s field does not match the %s field.";
+$lang['is_unique'] 			= "The %s field must contain a unique value.";
+$lang['is_natural']			= "The %s field must contain only positive numbers.";
+$lang['is_natural_no_zero']	= "The %s field must contain a number greater than zero.";
+$lang['decimal']			= "The %s field must contain a decimal number.";
+$lang['less_than']			= "The %s field must contain a number less than %s.";
+$lang['greater_than']		= "The %s field must contain a number greater than %s.";
 
 /* End of file lang.php */
 /* Location: ./system/language/english/lang.php */
