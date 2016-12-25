@@ -1,0 +1,314 @@
+<!doctype html>
+<!--[if lte IE 9]> <html class="lte-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en"> <!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Remove Tap Highlight on Windows Phone IE -->
+    <meta name="msapplication-tap-highlight" content="no"/>
+
+    <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png" sizes="32x32">
+
+    <title>Altair Admin v2.9.1</title>
+
+
+    <!-- uikit -->
+    <link rel="stylesheet" href="bower_components/uikit/css/uikit.almost-flat.min.css" media="all">
+
+    <!-- flag icons -->
+    <link rel="stylesheet" href="assets/icons/flags/flags.min.css" media="all">
+
+    <!-- style switcher -->
+    <link rel="stylesheet" href="assets/css/style_switcher.min.css" media="all">
+    
+    <!-- altair admin -->
+    <link rel="stylesheet" href="assets/css/main.min.css" media="all">
+
+    <!-- themes -->
+    <link rel="stylesheet" href="assets/css/themes/themes_combined.min.css" media="all">
+    
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/custom.css" media="all">
+
+    <!-- matchMedia polyfill for testing media queries in JS -->
+    <!--[if lte IE 9]>
+        <script type="text/javascript" src="bower_components/matchMedia/matchMedia.js"></script>
+        <script type="text/javascript" src="bower_components/matchMedia/matchMedia.addListener.js"></script>
+        <link rel="stylesheet" href="assets/css/ie.css" media="all">
+    <![endif]-->
+
+</head>
+<body class=" sidebar_main_open sidebar_main_swipe">
+    <!-- main header -->
+    <header id="header_main">
+        <div class="header_main_content">
+            <nav class="uk-navbar">
+                                
+                <!-- main sidebar switch -->
+                <a href="#" id="sidebar_main_toggle" class="sSwitch sSwitch_left">
+                    <span class="sSwitchIcon"></span>
+                </a>
+            </nav>
+        </div>
+        <div class="header_main_search_form">
+            <i class="md-icon header_main_search_close material-icons">&#xE5CD;</i>
+            <form class="uk-form uk-autocomplete" data-uk-autocomplete="{source:'data/search_data.json'}">
+                <input type="text" class="header_main_search_input" />
+                <button class="header_main_search_btn uk-button-link"><i class="md-icon material-icons">&#xE8B6;</i></button>
+                <script type="text/autocomplete">
+                    <ul class="uk-nav uk-nav-autocomplete uk-autocomplete-results">
+                        {{~items}}
+                        <li data-value="{{ $item.value }}">
+                            <a href="{{ $item.url }}">
+                                {{ $item.value }}<br>
+                                <span class="uk-text-muted uk-text-small">{{{ $item.text }}}</span>
+                            </a>
+                        </li>
+                        {{/items}}
+                    </ul>
+                </script>
+            </form>
+        </div>
+    </header><!-- main header end -->
+    <!-- main sidebar -->
+    <aside id="sidebar_main">
+        <div class="sidebar_main_header">
+            <div class="sidebar_logo">
+                <a href="index.html" class="sSidebar_hide sidebar_logo_large">
+                    <img class="logo_regular" src="../assets/img/logo.png" />
+                </a>
+            </div>
+        </div>
+        
+        <div class="menu_section">
+            <ul>
+                <li title="Dashboard">
+                    <a href="login.html">
+                        <span class="menu_icon"><i class="material-icons">&#xE898;</i></span>
+                        <span class="menu_title">Login</span>
+                    </a>
+                    
+                </li>
+                <li title="Mailbox">
+                    <a href="index.html">
+                        <span class="menu_icon"><i class="material-icons">&#xE7FE;</i></span>
+                        <span class="menu_title">Register</span>
+                    </a>
+                    
+                </li>
+                <li title="Invoices">
+                    <a href="our-news.html">
+                        <span class="menu_icon"><i class="material-icons">&#xE236;</i></span>
+                        <span class="menu_title">Our News</span>
+                    </a>
+                    
+                </li>
+            </ul>
+        </div>
+    </aside><!-- main sidebar end -->
+
+    <div id="page_content">
+        <div id="page_content_inner">
+
+            <h2 class="heading_b uk-margin-bottom">Privacy Statement</h2>
+            
+            <div class="uk-grid">
+            
+                <div class="uk-width-4-5">
+                    <div class="md-card uk-margin-medium-bottom">
+                        <div class="md-card-head">
+                            <img src="assets/img/privacy.jpg" alt="" class="blog_list_teaser_image">
+                        </div>
+                        <div class="md-card-content">
+                            <div class="uk-grid uk-grid-medium tabs-wrap" data-uk-grid-margin>
+                                <div class="uk-width-2-5">
+                                    <ul class="uk-tab uk-tab-left" data-uk-tab="{connect:'#tabs_6'}">
+                                        <li class="uk-active"><a href="#"><i class="material-icons">&#xE315;</i>Intelli Coders LLC. - Privacy Statement</a></li>
+                                        <li><a href="#"><i class="material-icons">&#xE315;</i>What this Privacy Statement Covers</a></li>
+                                        <li><a href="#"><i class="material-icons">&#xE315;</i>Collection and Use of Personal Information</a></li>
+                                        <li><a href="#"><i class="material-icons">&#xE315;</i>Collection and Use of Non-Personal Information</a></li>
+                                        <li><a href="#"><i class="material-icons">&#xE315;</i>Information Sharing and Disclosure</a></li>
+                                        <li><a href="#"><i class="material-icons">&#xE315;</i>Consent</a></li>
+                                        <li><a href="#"><i class="material-icons">&#xE315;</i>How to Access your Personal Information</a></li>
+                                        <li><a href="#"><i class="material-icons">&#xE315;</i>Security</a></li>
+                                        <li><a href="#"><i class="material-icons">&#xE315;</i>Changes to this Privacy Statement</a></li>
+                                        <li><a href="#"><i class="material-icons">&#xE315;</i>Questions or Suggestions</a></li>
+                                    </ul>
+                                </div>
+                                <div class="uk-width-3-5">
+                                    <ul id="tabs_6" class="uk-switcher uk-margin-small-top">
+                                        <li>
+                                            Intelli Coders LLC. (hereafter referred to as Intellicoders) has created this privacy statement to demonstrate our firm commitment to the privacy of the users of our websites. Please read the following to learn more about our privacy policy, and how we treat personally identifiable information collected from our visitors and users.
+                                        </li>
+                                        <li>
+                                            This privacy statement covers Intellicoders's treatment of personally identifiable information collected by Intellicoders through a website owned and operated by Intellicoders. 
+This privacy statement does not apply to the practices of companies that Intellicoders does not own or control, or of persons that Intellicoders does not employ or manage, including any third-party content contributors bound by contract and any third-party websites to which Intellicoders's websites link. 
+                                        </li>
+                                        <li>
+                                            You can visit the websites of Intellicoders without revealing any personal information. However, Intellicoders needs certain personal information if you wish to register for a members account, receive a Intellicoders newsletter, or use certain Intellicoders services. 
+Where required, this information may include your company contact information and your personal contact information. Intellicoders will use this information to reply to your inquiries, to set up your members account, to provide you with requested services, and to contact you regarding new services. 
+By accessing the services of Intellicoders and voluntarily providing us with the requested personal information, you consent to the collection and use of the information in accordance with this privacy statement.
+
+Collection and Use of Non-Personal Information
+
+Intellicoders automatically receives and records non-personal information on our server logs from your browser including your IP address, cookie information and the page you requested. Intellicoders may use this information to customize the advertising and content you see and to fulfill your requests for certain products and services. However, Intellicoders does not connect this non-personal data to any personal information collected from you. 
+Intellicoders uses third-party advertising companies to serve ads when you visit our website. These companies may use information (not including your name, address, email address, or telephone number) about your visits to this and other websites in order to provide advertisements about goods and services of interest to you.
+                                        </li>
+                                        <li>
+                                            Intellicoders automatically receives and records non-personal information on our server logs from your browser including your IP address, cookie information and the page you requested. Intellicoders may use this information to customize the advertising and content you see and to fulfill your requests for certain products and services. However, Intellicoders does not connect this non-personal data to any personal information collected from you. 
+Intellicoders uses third-party advertising companies to serve ads when you visit our website. These companies may use information (not including your name, address, email address, or telephone number) about your visits to this and other websites in order to provide advertisements about goods and services of interest to you. 
+                                        </li>
+                                        <li>
+                                            Intellicoders may disclose your personal information to third parties who work on behalf of Intellicoders to provide services requested by you. We will share personal information for these purposes only with third parties whose privacy policies are consistent with ours or who agree to abide by our policies with respect to personal information. 
+                                            <br>
+Intellicoders may otherwise disclose your personal information when: 
+
+                                            
+                                            <ul>
+                                                <li>We have your express consent to share the information for a specified purpose</li>
+                                                <li>We need to respond to subpoenas, court orders or such other legal process</li>
+                                                <li>We need to protect the personal safety of the users of our websites or defend the rights or property of Intellicoders; or</li>
+                                                <li>We find that your actions on our websites violate the Intellicoders Terms of Use document or any of our usage guidelines for specific products or services.</li>
+                                                <li>We may pass on information if Intellicoders is acquired or merged with another company. Should this occur, you will be notified before the information about you becomes subject to a different privacy policy.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            If you do not consent to the collection, use or disclosure of your personal information as outlined in this statement, please do not provide any personal information to Intellicoders. If you have provided personal information to Intellicoders and no longer consent to its use or disclosure as outlined herein, please contact us.
+                                        </li>
+                                        <li>
+                                           Intellicoders gives you the ability to edit your Intellicoders Account Information and preferences at any time. 
+You are also able to request deletion of your Intellicoders account at any time.
+                                        </li>
+                                        <li>
+                                            Unfortunately, no data transmission over the Internet can be considered 100% secure. However, your Intellicoders Account Information is password-protected for your privacy and security.In certain areas of our websites, as identified on the site, Intellicoders uses industry-standard SSL-encryption to protect data transmissions.
+                                            <br>
+We also safeguard your personal information from unauthorized access, through access control procedures, network firewalls and physical security measures.
+                                            <br>
+Further, Intellicoders retains your personal information only as long as necessary to fulfill the purposes identified above or as required by law.
+                                            <br>
+Should you believe your personal safety is threatened or that you may be the victim of identity theft or other illegal conduct, please contact the local, state/provincial or federal law enforcement agencies directly.
+                                        </li>
+                                        <li>
+                                            Intellicoders may at any time, without notice to you and in its sole discretion, amend this statement from time to time. Please review this statement periodically. Your continued use of Intellicoders websites after any such amendments signifies your acceptance thereof.
+                                        </li>
+                                        <li>
+                                            If you have questions or suggestions about this privacy statement, or your own personal information, please contact us.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="uk-width-large-1-5 uk-container-center uk-text-center">
+                    <div class="ads">
+                        <div class="md-card">
+                            <div class="md-card-head">
+                                <h3>Ads</h3>
+                            </div>
+                            <div class="md-card-content">
+                                <img src="http://placehold.it/350x350">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ads">
+                        <div class="md-card">
+                            <div class="md-card-head">
+                                <h3>Ads</h3>
+                            </div>
+                            <div class="md-card-content">
+                                <img src="http://placehold.it/350x700">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <footer id="footer">
+                <div class="copyrights"><a href="">Motseklat</a> © 2017. All Rights Reserved.</div>
+                <nav class="menu-h">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="terms-of-services.html">Terms & Conditions</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy-statement.html">Privacy Statment</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="advertise-with-us.html">Advertise With Us</a></li>
+                    </ul>
+                </nav>
+            </footer>
+        </div>
+    </div>
+
+    <!-- google web fonts -->
+    <script>
+        WebFontConfig = {
+            google: {
+                families: [
+                    'Source+Code+Pro:400,700:latin',
+                    'Roboto:400,300,500,700,400italic:latin'
+                ]
+            }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+
+    <!-- common functions -->
+    <script src="assets/js/common.min.js"></script>
+    <!-- uikit functions -->
+    <script src="assets/js/uikit_custom.min.js"></script>
+    <!-- altair common functions/helpers -->
+    <script src="assets/js/altair_admin_common.min.js"></script>
+
+    <!-- page specific plugins -->
+    <!-- parsley (validation) -->
+    <script>
+    // load parsley config (altair_admin_common.js)
+    altair_forms.parsley_validation_config();
+    // load extra validators
+    altair_forms.parsley_extra_validators();
+    </script>
+    <script src="bower_components/parsleyjs/dist/parsley.min.js"></script>
+    <!-- jquery steps -->
+    <script src="assets/js/custom/wizard_steps.min.js"></script>
+
+    <!--  forms wizard functions -->
+    <script src="assets/js/pages/forms_wizard.min.js"></script>
+    
+    <script>
+        $(function() {
+            if(isHighDensity()) {
+                $.getScript( "bower_components/dense/src/dense.js", function() {
+                    // enable hires images
+                    altair_helpers.retina_images();
+                });
+            }
+            if(Modernizr.touch) {
+                // fastClick (touch devices)
+                FastClick.attach(document.body);
+            }
+        });
+        $window.load(function() {
+            // ie fixes
+            altair_helpers.ie_fix();
+        });
+    </script>
+
+
+    
+</body>
+</html>

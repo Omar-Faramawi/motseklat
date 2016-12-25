@@ -1,0 +1,1 @@
+<?php $this->load->view('general_ads/responsive'); ?>
