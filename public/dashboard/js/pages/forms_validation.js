@@ -8,7 +8,7 @@ $(function() {
 // validation (parsley)
 altair_form_validation = {
     init: function() {
-        var $formValidate = $('#form_validation');
+        var $formValidate = $('#wizard_advanced_form');
 
         $formValidate
             .parsley()

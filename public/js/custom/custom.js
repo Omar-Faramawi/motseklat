@@ -1,5 +1,5 @@
 $(function () {
-    var base_path = 'http://www.motseklat.com/';
+    var base_path = 'http://localhost/motseklat_new/';
     var _GET_CITIES_PATH = base_path + 'home/get_cities_by_country/';
     var _DO_PURCHASE_ORDER_PATH = base_path + 'home/do_purchase_order/';
     var _GET_MODEL_PATH = base_path + 'home/get_models_by_manufacturer/';
@@ -27,6 +27,7 @@ $(function () {
             }, 'slow');
         }, "json");
     });
+
     $('#do_login, #do_forgot').submit(function (e) {
         e.preventDefault();
         var form = $(this);
@@ -42,28 +43,16 @@ $(function () {
         }, "json");
     });
 
-    $('#register_form #country_id').change(function () {
-        $('#register_form #city_id').empty();
-        $.post(_GET_CITIES_PATH, {"country_id": $('#register_form #country_id').val()}, function (data) {
-            $.each(data.cities, function (index, element) {
-                $('#register_form #city_id').append('<option value="' + element.id + '">' + element.name + '</option>');
-            });
+    $('form[name="register_form"] #country_id').on('change',function () {
+        $('form[name="register_form"] #city_id').empty();
+        $.post(base_path+'cities', {"country_id": $('form[name="register_form"] #country_id').val()}, function (data) {
+            console.log(data);
+            for(var item = 0; item < data.length; item++){
+                console.log(data[item].name);
+                $('form[name="register_form"] #city_id').append('<option value="' + data[item].id + '">' + data[item].name + '</option>');
+            }
         }, "json");
     });
-
-//    $('#article_comment_form').submit(function (e) {
-//        $('.loader').show();
-//        e.preventDefault();
-//        var action = $(this).attr('action');
-//        $.post(action, $('#article_comment_form').serialize(), function (data) {
-//            $('.loader').hide();
-//            if (data.status === true) {
-//                $("#alert_message").show().removeClass('error-box').addClass('success-box').find('p').html(data.msg);
-//            } else {
-//                $("#alert_message").show().removeClass('success-box').addClass('error-box').find('p').html(data.msg);
-//            }
-//        }, "json");
-//    });
 
     $('#add_feedback').submit(function (e) {
         $('.loader').show();
@@ -100,31 +89,6 @@ $(function () {
             });
         }, "json");
     });
-
-    /* start purchase order */
-//    $('.order_dialog').click(function () {
-//        manufacturer_id = $(this).attr('data-id');
-//    });
-//
-//    $('#do_purchase_order').submit(function (e) {
-//        $('#purchase_order .loader').show();
-//        e.preventDefault();
-//        var action = $(this).attr('action');
-//        $.post(action, $('#do_purchase_order').serialize() + '&manufacturer_id=' + manufacturer_id, function (data) {
-//            $('#purchase_order .loader').hide();
-//            if (data.status === true) {
-//                $("#purchase_order #alert_message").show().removeClass('error-box').addClass('success-box').find('p').html(data.msg);
-//                $('#purchase_order #send_order').hide();
-//                setTimeout(function () {
-//                    $('#purchase_order').modal('toggle');
-//                    $('#send_order').show();
-//                }, 1000);
-//            } else {
-//                $("#purchase_order #purchase_order #alert_message").show().removeClass('success-box').addClass('error-box').find('p').html(data.msg);
-//            }
-//        }, "json");
-//    });
-    /* end purchase order */
 
     $('#subscribe_form').submit(function (e) {
         e.preventDefault();

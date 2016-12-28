@@ -46,6 +46,11 @@ $route['forgot'] = 'authcontroller/forgot';
 $route['auth/forgot'] = 'authcontroller/show_forgot';
 $route['reset_password/token/(:any)'] = 'authcontroller/reset_password/$1';
 $route['auth/register'] = 'authcontroller/show_register';
+$route['register'] = 'authcontroller/do_register';
+
+/*API ROUTES*/
+$route['cities'] = 'apicontroller/cities';
+
 $route['profile/(:any)'] = 'profile/show/$1';
 
 /* End of file routes.php */

@@ -43,7 +43,6 @@
 
     <!-- common functions -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="<?php echo  base_url('public/js/custom/custom.js'); ?>"></script>
     <script src="<?php echo base_url('public/dashboard/js/common.min.js'); ?>"></script>
     <!-- uikit functions -->
     <script src="<?php echo base_url('public/dashboard/js/uikit_custom.min.js'); ?>"></script>
@@ -63,8 +62,10 @@
     <script src="<?php echo base_url('public/dashboard/js/custom/wizard_steps.min.js'); ?>"></script>
 
     <!--  forms wizard functions -->
-    <script src="<?php echo base_url('public/dashboard/js/pages/forms_wizard.min.js'); ?>"></script>
+    <script src="<?php echo base_url('public/dashboard/js/pages/forms_wizard.min.js'); ?>"></script>forms_validation.js
+    <script src="<?php echo base_url('public/dashboard/js/pages/forms_validation.js'); ?>"></script>
 
+    <script src="<?php echo  base_url('public/js/custom/custom.js'); ?>"></script>
     <script>
         $(function() {
             if (isHighDensity()) {
