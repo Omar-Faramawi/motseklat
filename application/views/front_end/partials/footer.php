@@ -62,7 +62,7 @@
     </script>
     <script src="<?php echo base_url('public/dashboard/bower_components/parsleyjs/dist/parsley.min.js'); ?>"></script>
     <!-- jquery steps -->
-    <script src="<?php echo base_url('public/dashboard/js/custom/wizard_steps.min.js'); ?>"></script>
+    <script src="<?php echo base_url('public/dashboard/js/custom/wizard_steps.js'); ?>"></script>
 
     <!--  forms wizard functions -->
     <script src="<?php echo base_url('public/dashboard/js/pages/forms_wizard.js'); ?>"></script>forms_validation.js

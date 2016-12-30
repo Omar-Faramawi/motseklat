@@ -9,24 +9,6 @@ $(function() {
 
     var manufacturer_id = null; // for purchasing order
 
-    $('#register_form').submit(function(e) {
-        $('#register_form .loader').show();
-        $('#register_form #do_register').hide();
-        e.preventDefault();
-        var action = $(this).attr('action');
-        $.post(action, $('#register_form').serialize(), function(data) {
-            if (data.status === true) {
-                $("#register_form #alert_message").show().removeClass('error-box').addClass('success-box').find('p').html(data.msg);
-            } else {
-                $("#register_form #alert_message").show().removeClass('success-box').addClass('error-box').find('p').html(data.msg);
-            }
-            $('#register_form #do_register').show();
-            $('#register_form .loader').hide();
-            jQuery('html,body').animate({
-                scrollTop: 0
-            }, 'slow');
-        }, "json");
-    });
 
     $('#do_login, #do_forgot').submit(function(e) {
         e.preventDefault();

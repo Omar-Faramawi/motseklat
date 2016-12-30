@@ -83,7 +83,8 @@
 
                                     <!-- second section -->
                                     <h3>Account Informaitions</h3>
-                                    <section>
+                                    <section id='register-form'>
+                                        <div id="alert_message" class="uk-alert" style="display: none;"></div>
                                         <div class="uk-grid" data-uk-grid-margin>
                                             <div class="uk-width-medium-1-2 parsley-row">
                                                 <select id="select_demo_4" required name="user_type" parsley-row data-md-selectize-bottom>
@@ -110,7 +111,7 @@
                                             <div class="uk-width-medium-1-2 parsley-row">
                                                 <label>Mobile Number <span class="req">*</span>
                                                 </label>
-                                                <input type="text" mobile="mobile" class="md-input" required />
+                                                <input type="text" name="mobile" class="md-input" required />
                                             </div>
 
                                             <div class="uk-width-medium-1-2 parsley-row">
@@ -165,6 +166,9 @@
                                                     <input type="checkbox" name="wizard_agree" id="wizard_agree" class="wizard-icheck" required value="1" />
                                                     <label for="wizard_agree" class="inline-label">I agree to the terms and conditions</label>
                                                 </span>
+                                            </div>
+                                            <div class="uk-width-medium-1-1 parsley-row">
+                                               <button id="do_register" class="md-btn md-btn-block md-btn-large md-btn-primary">Send</button>
                                             </div>
                                         </div>
                                     </section>

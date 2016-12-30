@@ -21,7 +21,7 @@
                                     <div class="uk-alert uk-alert-success">
                                         <?php echo $this->session->flashdata('success'); ?></div>
                                     <?php } ?>
-                                    <form action="<?= base_url('login')?>" method="post" id="do_login" enctype="multipart/form-data">
+                                    <form action="<?= base_url('login')?>" method="post" id="do_login" enctype="multipart/form-data" >
                                         <div id="login_message" class='uk-alert' style="display: none;"></div>
                                         <div class="uk-form-row">
                                             <div class="parsley-row">
