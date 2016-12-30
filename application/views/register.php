@@ -138,7 +138,7 @@
                                             </div>
 
                                             <div class="uk-width-medium-1-2 parsley-row">
-                                                <select name="country_id" required id="country_id"  parsley-row data-md-selectize-bottom>
+                                                <select name="country_id" required id="select-state"  parsley-row data-md-selectize-bottom>
                                                     <option value="">Country</option>
                                                     <?php
                                                         foreach ($countries as $country) {
@@ -148,12 +148,9 @@
                                                 </select>
                                             </div>
 
-                                            <div class="uk-width-medium-1-2 parsley-row">
-                                                <select name="city_id" id="city_id" required parsley-row data-md-selectize-bottom>
+                                            <div class="uk-width-medium-1-2 parsley-row " >
+                                                <select name="city_id" id="select-city" class="city-selection" required parsley-row data-md-selectize-bottom>
                                                     <option value="">City</option>
-                                                    <option value="1">االقاهرة</option>
-                                                    <option value="2">االاسكندرية</option>
-                                                    <option value="3">الجيزة</option>
                                                 </select>
                                             </div>
                                             

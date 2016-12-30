@@ -18,9 +18,9 @@ class APIController extends REST_Controller
         parent::__construct();
     }
 
-    function cities_post()
+    function cities_get($country_id)
     {
-    	$country_id = $this->input->post('country_id');
+    	//$country_id = $this->input->post('country_id');
     	$this->load->model('cities_model');
 
     	$cities = $this->cities_model->get_cities_by_country_id(intval($country_id));

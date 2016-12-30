@@ -49,7 +49,7 @@ $route['auth/register'] = 'authcontroller/show_register';
 $route['register'] = 'authcontroller/do_register';
 
 /*API ROUTES*/
-$route['cities'] = 'apicontroller/cities';
+$route['cities/(:any)'] = 'apicontroller/cities/$1';
 
 $route['profile/(:any)'] = 'profile/show/$1';
 
