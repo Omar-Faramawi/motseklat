@@ -105,7 +105,7 @@
                                             <div class="uk-width-medium-1-2 parsley-row">
                                                 <label>Username <span class="req">*</span>
                                                 </label>
-                                                <input type="text" name="username" class="md-input" required />
+                                                <input type="text" name="username" class="md-input" required >
                                             </div>
 
                                             <div class="uk-width-medium-1-2 parsley-row">
@@ -156,19 +156,16 @@
                                             </div>
                                             
                                             <div class="uk-form-row">
-                                                <div class="parsley-row">
+                                                <div class="parsley-row" required>
                                                     <div class="g-recaptcha" data-sitekey="6Lfuzw8UAAAAAJFYJBAenzGLHTnlDVE2Y-0W8lvF"></div>
                                                 </div>
                                             </div>
 
                                             <div class="uk-width-medium-1-1 parsley-row">
                                                 <span class="icheck-inline uk-margin-top uk-margin-left">
-                                                    <input type="checkbox" name="wizard_agree" id="wizard_agree" class="wizard-icheck" required value="1" />
+                                                    <input type="checkbox" name="agreement" id="wizard_agree" class="wizard-icheck" required value="1" />
                                                     <label for="wizard_agree" class="inline-label">I agree to the terms and conditions</label>
                                                 </span>
-                                            </div>
-                                            <div class="uk-width-medium-1-1 parsley-row">
-                                               <button id="do_register" class="md-btn md-btn-block md-btn-large md-btn-primary">Send</button>
                                             </div>
                                         </div>
                                     </section>

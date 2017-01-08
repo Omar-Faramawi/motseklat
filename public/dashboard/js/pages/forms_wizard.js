@@ -59,45 +59,38 @@ altair_wizard = {
                     var step = $wizard_advanced.find('.body.current').attr('data-step'),
                         $current_step = $('.body[data-step=\"' + step + '\"]');
 
-                    // check input fields for errors
-                    $current_step.find('.parsley-row').each(function() {
-                        $(this).find('input,textarea,select').each(function() {
-                            $(this).parsley().validate();
-                        });
-                    });
-
-                    if (step == "1") {
-                        var action = $('form[name="register_form"]').attr('action');
-                        $.post(action, $('form[name="register_form"]').serialize(), function(data) {
-                            console.log(data);
-                            if (data.status === true) {
-                                $("form[name='register_form'] #alert_message").show().removeClass('uk-alert-danger').addClass('uk-alert-success').html(data.msg);
-                                $window.resize();
-
-                                return $current_step.find('.md-input-danger').length || $current_step.find('.uk-alert-danger').length ? false : true;
-                            } else {
-                                $("form[name='register_form'] #alert_message").show().removeClass('uk-alert-success').addClass('uk-alert-danger').html(data.msg);
-                                $window.resize();
-
-                                return $current_step.find('.md-input-danger').length || $current_step.find('.uk-alert-danger').length ? false : true;
-                            }
-                            $('form[name="register_form"] #do_register').show();
-                            $('form[name="register_form"] .loader').hide();
-                            jQuery('html,body').animate({
-                                scrollTop: 0
-                            }, 'slow');
-                        }, "json");
+                    if( $current_step.find('.uk-alert-success').length ){
+                        return true;
                     } else {
+                        // check input fields for errors
+                        $current_step.find('.parsley-row').each(function() {
+                            $(this).find('input,textarea,select').each(function() {
+                                $(this).parsley().validate();
+                            });
+                        });
+                        
+                        if(step == 1){
+                            $window.resize();
+                            return do_register(function(data){
+                                if(data == 1){
+                                    return (function (){ return false; })();
+                                }else{
+                                    return (function(){ return true; })();
+                                }
+                            });
+                        }else{
 
-                        // adjust content height
-                        $window.resize();
+                            $window.resize();
 
-                        return $current_step.find('.md-input-danger').length || $current_step.find('.uk-alert-danger').length ? false : true;
+                            return $current_step.find('.md-input-danger').length || $current_step.find('.uk-alert-danger').length ? false : true;
+                        }
                     }
+
                 },
                 onFinished: function() {
-                    var form_serialized = JSON.stringify($wizard_advanced_form.serializeObject(), null, 2);
-                    UIkit.modal.alert('<p>Wizard data:</p><pre>' + form_serialized + '</pre>');
+                    // var form_serialized = JSON.stringify($wizard_advanced_form.serializeObject(), null, 2);
+                    // UIkit.modal.alert('<p>Wizard data:</p><pre>' + form_serialized + '</pre>');
+                    window.location = base_path + "auth/login";
                 }
             }) /*.steps("setStep", 2)*/ ;
 
@@ -151,3 +144,25 @@ altair_wizard = {
     }
 
 };
+
+function do_register(callback) {
+    var action = $('form[name="register_form"]').attr('action');
+    var flag = 0;
+    $.post(action, $('form[name="register_form"]').serialize(), function(data) {
+        console.log(data);
+        if (data.status === true) {
+            $("form[name='register_form'] #alert_message").show().removeClass('uk-alert-danger').addClass('uk-alert-success').html(data.msg);
+            flag = 0;
+            callback(flag);
+        } else {
+            $("form[name='register_form'] #alert_message").show().removeClass('uk-alert-success').addClass('uk-alert-danger').html(data.msg);
+            flag = 1;
+           callback(flag);
+        }
+        $('form[name="register_form"] #do_register').show();
+        $('form[name="register_form"] .loader').hide();
+        jQuery('html,body').animate({
+            scrollTop: 0
+        }, 'slow');
+    }, "json");
+}

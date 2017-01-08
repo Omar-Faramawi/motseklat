@@ -15,13 +15,13 @@
                                         <h3>Fill the form below and access to your account</h3>
                                     </div>
                                     <?php if($this->session->flashdata('error')){ ?>
-                                    <div class="uk-alert uk-alert-danger">
+                                    <div class="uk-alert uk-alert-danger" id='flas_from_rest'>
                                         <?php echo $this->session->flashdata('error'); ?></div>
                                     <?php }elseif($this->session->flashdata('success')){ ?>
-                                    <div class="uk-alert uk-alert-success">
+                                    <div class="uk-alert uk-alert-success" id='flas_from_rest'>
                                         <?php echo $this->session->flashdata('success'); ?></div>
                                     <?php } ?>
-                                    <form action="<?= base_url('login')?>" method="post" id="do_login" enctype="multipart/form-data" >
+                                    <form action="<?= base_url('login')?>" method="post" name="do_login" enctype="multipart/form-data"  id="wizard_advanced_form">
                                         <div id="login_message" class='uk-alert' style="display: none;"></div>
                                         <div class="uk-form-row">
                                             <div class="parsley-row">

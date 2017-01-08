@@ -48,9 +48,12 @@ $route['reset_password/token/(:any)'] = 'authcontroller/reset_password/$1';
 $route['auth/register'] = 'authcontroller/show_register';
 $route['register'] = 'authcontroller/do_register';
 
+/*registration validation routes*/
+
 /*API ROUTES*/
 $route['cities/(:any)'] = 'apicontroller/cities/$1';
 
+/*  Independant User Page */
 $route['profile/(:any)'] = 'profile/show/$1';
 
 /* End of file routes.php */

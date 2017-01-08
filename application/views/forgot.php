@@ -14,7 +14,7 @@
                                         <i class="material-icons md-48">&#xE898;</i>
                                         <h3>Fill the form below and reset your password</h3>
                                     </div>
-                                   <form action="<?= base_url('forgot')?>" method="post" id="do_forgot" enctype="multipart/form-data">
+                                   <form action="<?= base_url('forgot')?>" method="post" name="do_forgot" enctype="multipart/form-data"  id="wizard_advanced_form">
                                     <div id="login_message" class='uk-alert' style="display: none;"></div>
                                         <div class="uk-form-row">
                                             <div class="parsley-row">

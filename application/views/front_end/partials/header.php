@@ -43,7 +43,13 @@
     <![endif]-->
 
     <script src='https://www.google.com/recaptcha/api.js'></script>
-
+     <?php
+    echo "
+     <script type='text/javascript'>
+        var base_path = '".base_url()."';
+    </script>
+        ";
+    ?>
 </head>
 
 <body class=" sidebar_main_open sidebar_main_swipe">

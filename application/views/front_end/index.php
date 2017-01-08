@@ -32,6 +32,13 @@
     <![endif]-->
     
     <script src='https://www.google.com/recaptcha/api.js'></script>
+     <?php
+    echo "
+     <script type='text/javascript'>
+        var base_path = '".base_url()."';
+    </script>
+        ";
+    ?>
 </head>
 <body>
     <!-- navigation -->
@@ -141,7 +148,7 @@
                                             <div class="user_avatar"></div>
                                         </div>
                                     </div>
-                                    <form action="<?= base_url('login')?>" method="post" id="do_login" enctype="multipart/form-data">
+                                    <form action="<?= base_url('login')?>" method="post" name="do_login" enctype="multipart/form-data" id="wizard_advanced_form">
                                         <div id="login_message" class='uk-alert' style="display: none;"></div>
                                         <div class="uk-form-row">
                                             <div class="parsley-row">
@@ -181,7 +188,7 @@
                                 <div class="uk-modal-dialog">
                                     <button type="button" class="uk-modal-close uk-close" data-uk-modal="{target:'#login-modal'}"></button>
                                     <h2 class="heading_d uk-text-center uk-margin-large-bottom">Reset Your Password</h2>
-                                    <form action="<?= base_url('forgot')?>" method="post" id="do_forgot" enctype="multipart/form-data">
+                                    <form action="<?= base_url('forgot')?>" method="post" name="do_forgot" enctype="multipart/form-data" id="wizard_advanced_form">
                                      <div id="login_message" class='uk-alert' style="display: none;"></div>
                                         <div class="uk-form-row">
                                             <div class="parsley-row">

@@ -122,7 +122,7 @@ class AuthController extends CI_Controller
      */
     public function forgot()
     {
-        
+        //g-recaptcha-response
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         
         if ($this->form_validation->run() == FALSE) {
@@ -273,12 +273,15 @@ class AuthController extends CI_Controller
         $this->form_validation->set_rules('confirm_password', 'Password Confirmation', 'required|trim|xss_clean');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[users.email]|matches[confirm_email]|xss_clean');
         $this->form_validation->set_rules('confirm_email', 'Email confirmation', 'required|trim|xss_clean');
-        $this->form_validation->set_rules('mobile', 'Mobile', 'required|trim|xss_clean');
+        $this->form_validation->set_rules('mobile', 'Mobile', 'required|trim|numeric|xss_clean');
         $this->form_validation->set_rules('country_id', 'Country', 'required|trim|numeric|xss_clean');
         $this->form_validation->set_rules('city_id', 'City', 'required|trim|numeric|xss_clean');
-        
+        $this->form_validation->set_rules('agreement', 'Terms and conditions', 'required|xss_clean');
+        $this->form_validation->set_rules('g-recaptcha-response', 'Recaptasha Check', 'required|xss_clean');
+
         if ($this->form_validation->run() == FALSE) {
             $errorMsg = validation_errors();
+            //header("HTTP/1.0 404 Not Found");
             echo json_encode(array(
                 'status' => false,
                 'msg' => $errorMsg
@@ -297,24 +300,39 @@ class AuthController extends CI_Controller
                 $data['added_date'] = date('Y-m-d H:i:s');
                 $result             = $this->users_model->insert_user($data);
                 if ($result) {
-                    $this->send_validation_email($data);
+                    //$this->send_validation_email($data);
                     echo json_encode(array(
                         'status' => true,
-                        'msg' => 'تم التسجيل بنجاح ...قم بتفعيل الحساب من خلال بريدك الإلكتروني'
+                        'msg' => 'Registration successed, please click next to finish your registration',
                     ));
                 } else {
+                    //header("HTTP/1.0 404 Not Found");
                     echo json_encode(array(
                         'status' => false,
-                        'msg' => 'هناك خطأ في البيانات المدخلة'
+                        'msg' => 'Soemthing went wrong, please try again later'
                     ));
                 }
             } else {
+                //header("HTTP/1.0 404 Not Found");
                 echo json_encode(array(
                     'status' => false,
-                    'msg' => 'يجب الموافقة على إتفاقية الموقع لإستكمال عملية التسجيل'
+                    'msg' => 'You must agree the website terms and conditions'
                 ));
             }
         }
     }
     
+
+    public function validate_username()
+    {
+        $this->form_validation->set_rules('full_name', 'Full name', 'required|trim|min_length[6]|xss_clean');
+
+        if ($this->form_validation->run() == FALSE) {
+            $errorMsg = validation_errors();
+            echo json_encode(array(
+                'status' => false,
+                'msg' => $errorMsg
+            ));
+        }
+    }
 }

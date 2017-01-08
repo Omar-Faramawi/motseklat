@@ -1,5 +1,4 @@
 $(function() {
-    var base_path = 'http://localhost/motseklat_new/';
     var _GET_CITIES_PATH = base_path + 'home/get_cities_by_country/';
     var _DO_PURCHASE_ORDER_PATH = base_path + 'home/do_purchase_order/';
     var _GET_MODEL_PATH = base_path + 'home/get_models_by_manufacturer/';
@@ -10,14 +9,17 @@ $(function() {
     var manufacturer_id = null; // for purchasing order
 
 
-    $('#do_login, #do_forgot').submit(function(e) {
+    $('form[name="do_login"], form[name="do_forgot"]').submit(function(e) {
         e.preventDefault();
+        if($('div#flas_from_rest').length){
+            $('div#flas_from_rest').hide();
+        }
         var form = $(this);
         var action = $(this).attr('action');
         $.post(action, form.serialize(), function(data) {
             if (data.status === true) {
                 form.find("div#login_message").removeClass('uk-alert-danger').addClass('uk-alert-success').html(data.msg).show();
-                if (form.attr('id') != "do_forgot")
+                if (form.attr('name') != "do_forgot")
                     window.location.href = data.redirect;
             } else {
                 form.find("div#login_message").removeClass('uk-alert-success').addClass('uk-alert-danger').html(data.msg).show();
@@ -28,7 +30,7 @@ $(function() {
     $('form[name="register_form"] #select-state').on('change',function () {
         $('form[name="register_form"] #select-city').empty();
         $.get(base_path+'cities/'+ $('#select-state').val(), function (data) {
-            console.log(data);
+            //console.log(data);
             var options = [];
             for(var item = 0; item < data.length; item++){
                 var option = {value: data[item].id, text: data[item].name};
